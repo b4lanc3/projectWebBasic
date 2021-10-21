@@ -1,0 +1,177 @@
+/* cú pháp ép kiểu */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Lato', 'Arial', sans-serif;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 50px;
+    margin: 0 auto;
+}
+/* home menu */
+.home-menu{
+    background-image: url(./image/hero.jpg);
+    height: 700px;
+    background-size: cover;
+
+
+    position: relative;
+    z-index: 1;
+}
+nav{
+    margin-left: 10%;
+}
+nav .max-width{
+    display: flex;
+    justify-content: space-around;
+}
+nav .menu a{
+    display: inline-block;
+    padding: 0px 30px;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    z-index: 3;
+}
+.max-width .logo img{
+    height: 80px;
+    width: 80px;
+
+}
+.max-width .menu{
+    width: 800px;
+    list-style: none;
+    line-height: 80px;
+
+}
+.opacity-menu{
+    background-color: black;
+height: 100%;
+width: 100%;
+opacity: 0.7;
+position: absolute;
+z-index: 2; 
+}
+
+.max-width .logo{
+    z-index: 3;
+}
+.max-width .menu{
+    z-index: 4;
+}
+.content-menu{
+    width: 800px;
+    height: 200px;
+    margin: 10%;
+    margin-top: 8%;
+    color: white;
+    position: relative;
+    z-index: 4;
+}
+.content-menu .text p{
+    font-size: 50px;
+    font-weight: 150;
+    line-height: 60px;
+}
+.content-menu .multi-button{
+    width: 320px;
+    margin-top: 20px;
+    display: flex;
+flex-direction: row;
+justify-content: space-around;  
+}
+.content-menu .multi-button button{
+    width: 150px;
+    height: 40px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    background: none;
+    border: solid 2px orange;
+    border-radius: 30px;
+}
+#btn1{
+    background-color: orange;
+    color: #fff;
+}
+#btn2{
+    color: orange;
+}
+.max-width .orange-bar{
+    width: 100px;
+    height: 2px;
+    margin-top: 30px;
+    background-color: orange;
+}
+.home-content .max-width{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.home-content .max-width .about{
+    margin-top: 30px;
+}
+.max-width .about p{
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 300;
+}
+.home-content .max-width .content-boxes{
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 1100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.content-boxes .content-box{
+width: 250px;
+height: fit-content;
+}
+.content-boxes .content-box i{
+color: orange;
+font-size: 50px;
+line-height: 70px;
+}
+.content-boxes .content-box p{
+    font-size: 15px;
+    line-height: 30px;
+font-weight: 600;
+text-align: justify;
+}
+.content-boxes .content-box .title{
+    font-size: 20px;
+    text-align: left;
+    line-height: 40px;
+}
+.home-banner{
+    width: 100%;
+    margin-top: 30px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.home-banner .banner-image{
+    width: 25%;
+    height: 275px;      
+    overflow: hidden;
+    background-color: #000;
+}
+.home-banner .banner-image img{
+    width: 100%;
+    height: 275px;
+    border: none;
+    display: block;
+    opacity: 0.7;
+    transform: scale(1.15);
+    transition: transform 0.5s;
+}
+.banner-image img :hover{
+    opacity: 1;
+    transform: scale(1.03); 
+}
+
+
