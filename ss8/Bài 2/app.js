@@ -1,0 +1,10 @@
+fetch("https://opentdb.com/api.php?amount=5&category=21&difficulty=easy&type=multiple")
+.then(async res => {
+    let data1 = await res.json()
+    console.log(data1)
+    console.log('Đáp án đúng cho câu 1 là :'+data1.results[0].correct_answer)
+    console.log('Những đáp án sai của câu 2 là :'+data1.results[1].incorrect_answers)
+    console.log("Câu hỏi của câu 3 là :"+data1.results[2].question)
+    console.log("Những đáp án sai của câu 4 là :"+data1.results[3].incorrect_answers)
+    console.log("Câu hỏi của câu 5 là :"+data1.results[4].question)
+})
