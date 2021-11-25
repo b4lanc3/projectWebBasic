@@ -1,0 +1,17 @@
+body{
+font-family: 'Playfair Display', serif;
+font-family: 'Roboto', sans-serif;
+letter-spacing: 2px;
+padding: 100px;
+font-size: 22px;
+color: #2ddfdf;
+text-shadow: 0 0 10px #2ddfdf;
+}
+span{
+    animation: blinker 1 linear infinite;
+}
+@keyframes blinker{
+    50%{
+        opacity: 0;
+    }
+}
