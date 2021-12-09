@@ -34,10 +34,43 @@ typewriter = () => {
   }
   else{
     quoteArray[index] = ' ';
-    setTimeout("typewriter()", 3000);
+    setTimeout("typewriter()", 6000);
     textPosition = 0;
     flag = true;
   }   
 }
 
 window.addEventListener('load', typewriter);
+//text-to-speech
+let speech = new SpeechSynthesisUtterance();
+
+// Set Speech Language
+speech.lang = "en";
+
+let voices = []; // global array of available voices
+
+window.speechSynthesis.onvoiceschanged = () => {
+  // Get List of Voices
+  voices = window.speechSynthesis.getVoices();
+
+  // Initially set the First Voice in the Array.
+  speech.voice = voices[0];
+document.querySelector("#start").addEventListener("click", () => {
+  speech.text = document.querySelector("quote").value;
+
+  // Start Speaking
+  window.speechSynthesis.speak(speech);
+});
+document.querySelector("#talk").addEventListener("click", () => {
+  speech.text = document.querySelector("textarea").value;
+  window.speechSynthesis.speak(speech);
+});
+document.querySelector("#pause").addEventListener("click", () => {
+  window.speechSynthesis.pause();
+});
+document.querySelector("#resume").addEventListener("click", () => {
+  window.speechSynthesis.resume();
+});
+document.querySelector("#cancel").addEventListener("click", () => {
+  window.speechSynthesis.cancel();
+});}
