@@ -26,15 +26,15 @@ typewriter = () => {
     quoteArray[index] += ""; 
     flag = false;
   }
-
+ let quote =
   document.querySelector("#quote").innerHTML = quoteArray[index].substring(0, textPosition) + '<span>\u25AE</span>';
-
+console.log(quote)
   if(textPosition++ != quoteArray[index].length){
     setTimeout("typewriter()", 100);
   }
   else{
     quoteArray[index] = ' ';
-    setTimeout("typewriter()", 6000);
+    setTimeout("typewriter()", 10000);
     textPosition = 0;
     flag = true;
   }   
@@ -43,22 +43,14 @@ typewriter = () => {
 window.addEventListener('load', typewriter);
 //text-to-speech
 let speech = new SpeechSynthesisUtterance();
-
-// Set Speech Language
 speech.lang = "en";
 
-let voices = []; // global array of available voices
-
+let voices = [];
 window.speechSynthesis.onvoiceschanged = () => {
-  // Get List of Voices
   voices = window.speechSynthesis.getVoices();
-
-  // Initially set the First Voice in the Array.
   speech.voice = voices[0];
 document.querySelector("#start").addEventListener("click", () => {
   speech.text = document.querySelector("quote").value;
-
-  // Start Speaking
   window.speechSynthesis.speak(speech);
 });
 document.querySelector("#talk").addEventListener("click", () => {
