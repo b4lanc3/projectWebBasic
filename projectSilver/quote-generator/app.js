@@ -34,7 +34,7 @@ console.log(quote)
   }
   else{
     quoteArray[index] = ' ';
-    setTimeout("typewriter()", 10000);
+    setTimeout("typewriter()", 15000);
     textPosition = 0;
     flag = true;
   }   
