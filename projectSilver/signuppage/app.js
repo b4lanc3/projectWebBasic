@@ -11,3 +11,9 @@ $(".log-in").click(function(){
     $(".signIn").removeClass("active-dx");
     $(".signUp").removeClass("inactive-sx");
   });
+  const signUpForm=document.getElementById("signUp-form") ;
+console.log(signUpForm);
+signUpForm.addEventListener('submit',function(e){
+    e.preventDefault()
+    console.log(signUpForm.username.value)
+})
