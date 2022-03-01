@@ -2,7 +2,7 @@ var quoteArray = [];
 var index = 0; 
 var textPosition = 0; 
 var flag = true;
-
+let start=document.getElementById('start')
 loadQuote = () => {
   const url = 'https://api.quotable.io/random';
 
@@ -37,6 +37,10 @@ console.log(quote)
     setTimeout("typewriter()", 15000);
     textPosition = 0;
     flag = true;
+    start.style.display = "inline-block"
+    pauseBtn.style.display = "inline-block"
+    resumeBtn.style.display = "inline-block"
+    cancelBtn.style.display = "inline-block"
   }   
 }
 
@@ -48,21 +52,40 @@ speech.lang = "en";
 let voices = [];
 window.speechSynthesis.onvoiceschanged = () => {
   voices = window.speechSynthesis.getVoices();
-  speech.voice = voices[0];
+  speech.voice = voices[1];
 document.querySelector("#start").addEventListener("click", () => {
-  speech.text = document.querySelector("quote").value;
-  window.speechSynthesis.speak(speech);
+  speech.text = document.querySelector("#quote").value;
+let a=document.querySelector("#quote").innerHTML;
+  console.log(a)
+  speechSynthesis.speak(new SpeechSynthesisUtterance(a));
+  console.log(speech)
 });
 document.querySelector("#talk").addEventListener("click", () => {
   speech.text = document.querySelector("textarea").value;
   window.speechSynthesis.speak(speech);
 });
 document.querySelector("#pause").addEventListener("click", () => {
-  window.speechSynthesis.pause();
+  speechSynthesis.pause((a))
 });
 document.querySelector("#resume").addEventListener("click", () => {
-  window.speechSynthesis.resume();
+  speechSynthesis.resume(new SpeechSynthesisUtterance(a))
 });
 document.querySelector("#cancel").addEventListener("click", () => {
-  window.speechSynthesis.cancel();
+  speechSynthesis.cancel(new SpeechSynthesisUtterance(a))
 });}
+function continue1 (){
+  speechSynthesis.resume();
+}
+function pause()
+{
+    speechSynthesis.pause();
+}
+
+
+function stop()
+{
+    speechSynthesis.cancel();
+}
+pauseBtn.addEventListener('click', pause);
+cancelBtn.addEventListener('click', stop);
+resumeBtn.addEventListener('click', continue1)

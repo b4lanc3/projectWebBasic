@@ -29,3 +29,15 @@ span{
 #info{
 margin-top: 9%;
 }
+#start{
+    display: none;
+}
+#resumeBtn{
+    display: none;
+}
+#pauseBtn{
+    display: none;
+}
+#cancelBtn{
+    display: none;
+}
