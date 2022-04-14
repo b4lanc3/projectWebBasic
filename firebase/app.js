@@ -1,29 +1,29 @@
-import { collection, addDoc } from "firebase/firestore";
-document.getElementById("submit").onclick = function() {
-    const title = document.getElementById("Title").value;
-    const content = document.getElementById("Content").value;
-    const author = document.getElementById("Author").value;
-
-    let checkInput = true;
-    if (title.lenght <= 3) {
-        alert(Warning)
-        let checkInput = false;
-    } else if (content.lenght <= 3) {
-        alert(Warning)
-        let checkInput = false;
-    } else if (author.lenght <= 3) {
-        alert(Warning)
-        let checkInput = false;
+import {
+    collection,
+    addDoc,
+    getFirestore,
+  } from 'https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js';
+  import { app } from './config.js';
+  
+  const db = getFirestore(app);
+  
+  document.getElementById('submit').onclick = async function () {
+    const title = document.getElementById('title').value;
+    const content = document.getElementById('content').value;
+    const author = document.getElementById('author').value;
+  
+    if (title.length <= 3) {
+      alert('Yêu cầu nhập title phải từ 4 kí tự trở lên');
+    } else if (content.length <= 20) {
+      alert('Yêu cầu nhập content phải từ 21 kí tự trở lên');
+    } else if (author.length < 2) {
+      alert('Yêu cầu nhập tên tác giả phải từ 2 kí tự trở lên');
     } else {
-
-
-        // Add a new document with a generated id.
-        const docRef = await addDoc(collection(db, "cities"), {
-            name: "Tokyo",
-            country: "Japan"
-        });
-        console.log("Document written with ID: ", docRef.id);;
+      const docRef = await addDoc(collection(db, 'posts'), {
+        title,
+        content,
+        author,
+      });
+      console.log('Document written with ID: ', docRef.id);
     }
-
-
-}
+  };
