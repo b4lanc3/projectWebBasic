@@ -1011,5 +1011,11 @@ input {
 .information{
     font-family: 'Times New Roman', Times, serif;
     font-size: 30px;
-    display: block;
+    display: inline-block;
+    margin: 0 350px;
+    color: black;
+}
+#reserving{
+    display: inline-block;
+    margin: 0 350px;
 }
