@@ -1008,3 +1008,8 @@ input {
         height: 640px;
     }
 }
+.information{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    display: block;
+}
