@@ -1008,14 +1008,21 @@ input {
         height: 640px;
     }
 }
-.information{
+
+.information {
     font-family: 'Times New Roman', Times, serif;
     font-size: 30px;
     display: inline-block;
-    margin: 0 350px;
+    margin: 0 300px;
     color: black;
 }
-#reserving{
+
+#reserving {
     display: inline-block;
     margin: 0 350px;
+}
+
+.detail-img {
+    display: block;
+    padding: 10px 10px;
 }
