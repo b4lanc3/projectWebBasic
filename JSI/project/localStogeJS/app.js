@@ -21,7 +21,7 @@ function check() {
 
     if (userName.value == storedName && userPw.value == storedPw) {
         alert('You are logged in.');
-        window.location.href = "../quote-generator/index.html"
+        window.location.href = "../Main/index.html"
     } else {
         alert('Error on login');
     }
